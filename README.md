@@ -1,9 +1,8 @@
 # BIG-AGI 🤖💬
 
-Welcome to `big-AGI`! 🎉
-Personal AGI App, powered by `OpenAI GPT-4` and beyond. Designed for smart humans and super-heroes,
-this responsive web app comes with Streaming, Code Execution, PDF imports, Voice support,
-data Rendering, AGI functions and chats. Show your friends some `#big-agi-energy` 🚀
+به big-AGI خوش آمدید
+! 🎉 برنامه شخصی AGI که ​​توسط OpenAI GPT-4 و فراتر از آن طراحی شده است. این برنامه وب واکنش‌گرا که برای انسان‌های باهوش و ابرقهرمانان طراحی شده است، همراه با پخش جریانی، اجرای کد، واردات PDF، پشتیبانی صوتی، رندر داده، توابع AGI و چت است. به دوستان خود مقداری #انرژی_بزرگ نشان دهید 🚀
+
 
 [![Official Website](https://img.shields.io/badge/BIG--AGI.com-%23096bde?style=for-the-badge&logo=vercel&label=demo)](https://big-agi.com)
 
@@ -11,52 +10,49 @@ Or click fork & run on Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fenricoros%2Fbig-agi&env=OPENAI_API_KEY,OPENAI_API_HOST&envDescription=OpenAI%20KEY%20for%20your%20deployment.%20Set%20HOST%20only%20if%20non-default.)
 
-## Useful 👊
+مفید 👊 
+پرسونای هوش مصنوعی جذاب 
+Clean UX، w/tokens counters 
+حریم خصوصی: کلیدهای API متعلق به کاربر و محلی ذخیره سازی Human I/O: 
+پشتیبانی صوتی پیشرفته (TTS، STT) I/O ماشین: واردات و خلاصه سازی PDF، 
+اجرای کد بسیاری از به روز رسانی ها و ادغام های دیگر: ElevenLabs، Helicone، Paste.gg در حال ظهور: استدلال خودکار-AGI
 
-- Engaging AI Personas
-- Clean UX, w/ tokens counters
-- Privacy: user-owned API keys and localStorage
-- Human I/O: Advanced voice support (TTS, STT)
-- Machine I/O: PDF import & Summarization, code execution
-- Many more updates & integrations: ElevenLabs, Helicone, Paste.gg
-- Coming up: automatic-AGI reasoning
+### امکانات
 
-### Features
+#### 🚨 آوریل: moar #mifai-kiyosk
 
-#### 🚨 April: moar #big-agi-energy
-
-- 🎉 **[Voice Synthesis](docs/pixels/feature_voice_1.png)** 📣 with ElevenLabs, including selection of custom voices
-- 🎉 **Image Generation** using Prodia API Keys (BYOK), just /imagine (or /img or /i) it
-- 🎉 **[Precise Token Counter](docs/pixels/feature_token_counter.png)** 📈 extra-useful to pack the context window
-- 🎉 **[Install Mobile APP](docs/pixels/feature_pwa.png)** 📲 looks like native (@harlanlewis)
-- 🎉 **[UI language](docs/pixels/feature_language.png)** with auto-detect, and future app language! (@tbodyston)
-- 🎉 **PDF Summarization** 🧩🤯 - ask questions to a PDF! (@fredliubojin)
-- 🎉 **Code Execution: [Codepen](https://codepen.io/)/[Replit](https://replit.com/)** 💻 (@harlanlewis)
-- 🎉 **[SVG Drawing](docs/pixels/feature_svg_drawing.png)** - draw with AI 🎨
-- 🎉 Chats: multiple chats, AI titles, Import/Export, Selection mode
-- 🎉 Rendering: Markdown, SVG, improved Code blocks
-- 🎉 Integrations: OpenAI organization ID
+- 🎉 **[Voice Synthesis](docs/pixels/feature_voice_1.png)** 📣 با ElevenLabs، از جمله انتخاب صداهای سفارشی
+- 🎉 **تولید تصویر** با استفاده از کلیدهای API Prodia (BYOK)، فقط آن را /imagine (یا /img یا /i) کنید
+- 🎉 **[Precise Token Counter](docs/pixels/feature_token_counter.png)** 📈 extra-useful برای بسته بندی پنجره زمینه
+- 🎉 **[Install Mobile APP](docs/pixels/feature_pwa.png)** 📲 شبیه بومی است (@madmaxmehdi44)
+- 🎉 **[UI language](docs/pixels/feature_language.png)** با auto-detect, و زبان برنامه آینده! (@mehdiminaee)
+- 🎉 **PDF Summarization** 🧩🤯 - سوال بپرسید به  PDF! (@mehdiminaee)
+- 🎉 **Code Execution: [Codepen](https://codepen.io/)/[Replit](https://replit.com/)** 💻 (@mehdiminaee)
+- 🎉 **[SVG Drawing](docs/pixels/feature_svg_drawing.png)** - قرعه کشی با AI 🎨
+- 🎉 چت: چت های متعدد، عناوین هوش مصنوعی، واردات/صادرات، حالت انتخاب
+- 🎉 رندر: Markdown، SVG، بلوک های کد بهبود یافته
+- 🎉 ادغام: شناسه سازمان OpenAI
 - 🎉 [Cloudflare deployment instructions](docs/deploy-cloudflare.md),
   [awesome-agi](https://github.com/enricoros/awesome-agi)
 - 🎉 [Typing Avatars](docs/pixels/gif_typing_040123.gif) ⌨️
-  <!-- p><a href="docs/pixels/gif_typing_040123.gif"><img src="docs/pixels/gif_typing_040123.gif" width='700' alt="New Typing Avatars"/></a></p -->
+  <!-- p><a href="docs/pixels/gif_typing_040123.gif"><img src="docs/pixels/gif_typing_040123.gif" width='700' alt="آواتارهای تایپ جدید"/></a></p -->
 
-#### March: first release
+#### مارس: اولین انتشار
 
-- 🎉 **[AI Personas](docs/pixels/feature_purpose_two.png)** - including Code, Science, Corporate, and Chat 🎭
-- 🎉 **Privacy**: user-owned API keys 🔑 and localStorage 🛡️
-- 🎉 **Context** - Attach or [Drag & Drop files](docs/pixels/feature_drop_target.png) to add them to the prompt 📁
-- 🎉 **Syntax highlighting** - for multiple languages 🌈
+- 🎉 **[AI Personas](docs/pixels/feature_purpose_two.png)** - از جمله کد، علم، شرکت و چت 🎭
+- 🎉 **حریم خصوصی**: user-owned API keys 🔑 و محل ذخیره سازی 🛡️
+- 🎉 **مفاد** - ضمیمه یا [Drag & Drop files](docs/pixels/feature_drop_target.png) برای اضافه کردن آنها به درخواست 📁
+- 🎉 **برجسته سازی نحو** - برای چندین زبان 🌈
 - 🎉 **Code Execution: Sandpack
-  ** - [now on branch]((https://github.com/enricoros/big-agi/commit/f678a0d463d5e9cf0733f577e11bd612b7902d89)) `variant-code-execution`
-- 🎉 Chat with GPT-4 and 3.5 Turbo 🧠💨
-- 🎉 Real-time streaming of AI responses ⚡
-- 🎉 **Voice Input** 🎙️ - works great on Chrome / Windows
-- 🎉 Integration: **[Paste.gg](docs/pixels/feature_paste_gg.png)** integration for chat sharing 📥
-- 🎉 Integration: **[Helicone](https://www.helicone.ai/)** integration for API inspectability 📊
-- 🌙 Dark model - Wide mode ⛶
+  ** - [اکنون در شعبه]((https://mifai-kiyosk.vercel.app/)) `variant-code-execution`
+- 🎉 با GPT-4 و 3.5 Turbo گپ بزنید 🧠💨
+- 🎉 پخش زمان واقعی پاسخ های هوش مصنوعی ⚡
+- 🎉 **ورودی صدا** 🎙️ - روی کروم / ویندوز عالی کار می کند
+- 🎉 ادغام: **[Paste.gg](docs/pixels/feature_paste_gg.png)** یکپارچه سازی برای اشتراک گذاری چت 📥
+- 🎉 ادغام: **[Helicone](https://www.helicone.ai/)** ادغام برای قابلیت بازرسی API 📊
+- 🌙 مدل تاریک - حالت عریض ⛶
 
-## Support 🙌
+## پشتیبانی  🙌
 
 [//]: # ([![Official Discord]&#40;https://img.shields.io/discord/1098796266906980422?label=discord&logo=discord&logoColor=%23fff&style=for-the-badge&#41;]&#40;https://discord.gg/MkH4qj2Jp9&#41;)
 [![Official Discord](https://discordapp.com/api/guilds/1098796266906980422/widget.png?style=banner2)](https://discord.gg/MkH4qj2Jp9)
