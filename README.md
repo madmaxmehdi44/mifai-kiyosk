@@ -1,10 +1,10 @@
-# BIG-AGI 🤖💬
+# MiFAI-KiyOsk 🤖💬
 
-به big-AGI خوش آمدید
+به MiFAI-KiyOsk خوش آمدید
 ! 🎉 برنامه شخصی AGI که ​​توسط OpenAI GPT-4 و فراتر از آن طراحی شده است. این برنامه وب واکنش‌گرا که برای انسان‌های باهوش و ابرقهرمانان طراحی شده است، همراه با پخش جریانی، اجرای کد، واردات PDF، پشتیبانی صوتی، رندر داده، توابع AGI و چت است. به دوستان خود مقداری #انرژی_بزرگ نشان دهید 🚀
 
 
-[![Official Website](https://img.shields.io/badge/BIG--AGI.com-%23096bde?style=for-the-badge&logo=vercel&label=demo)](https://big-agi.com)
+[![Official Website](https://img.shields.io/badge/BIG--AGI.com-%23096bde?style=for-the-badge&logo=vercel&label=demo)](https://MiFAI-KiyOsk.com)
 
 Or click fork & run on Vercel
 
@@ -21,18 +21,18 @@ Clean UX، w/tokens counters
 
 #### 🚨 آوریل: moar #mifai-kiyosk
 
-- 🎉 **[Voice Synthesis](docs/pixels/feature_voice_1.png)** 📣 با ElevenLabs، از جمله انتخاب صداهای سفارشی
+- 🎉 **[سنتز صدا](docs/pixels/feature_voice_1.png)** 📣 با ElevenLabs، از جمله انتخاب صداهای سفارشی
 - 🎉 **تولید تصویر** با استفاده از کلیدهای API Prodia (BYOK)، فقط آن را /imagine (یا /img یا /i) کنید
-- 🎉 **[Precise Token Counter](docs/pixels/feature_token_counter.png)** 📈 extra-useful برای بسته بندی پنجره زمینه
-- 🎉 **[Install Mobile APP](docs/pixels/feature_pwa.png)** 📲 شبیه بومی است (@madmaxmehdi44)
-- 🎉 **[UI language](docs/pixels/feature_language.png)** با auto-detect, و زبان برنامه آینده! (@mehdiminaee)
-- 🎉 **PDF Summarization** 🧩🤯 - سوال بپرسید به  PDF! (@mehdiminaee)
-- 🎉 **Code Execution: [Codepen](https://codepen.io/)/[Replit](https://replit.com/)** 💻 (@mehdiminaee)
-- 🎉 **[SVG Drawing](docs/pixels/feature_svg_drawing.png)** - قرعه کشی با AI 🎨
+- 🎉 **[شمارنده توکن دقیق](docs/pixels/feature_token_counter.png)** 📈 extra-useful برای بسته بندی پنجره زمینه
+- 🎉 **[برنامه موبایل را نصب کنید](docs/pixels/feature_pwa.png)** 📲 شبیه بومی است (@madmaxmehdi44)
+- 🎉 **[زبان رابط کاربری](docs/pixels/feature_language.png)** با auto-detect, و زبان برنامه آینده! (@mehdiminaee)
+- 🎉 **خلاصه سازی PDF** 🧩🤯 - سوال بپرسید به  PDF! (@mehdiminaee)
+- 🎉 **اجرای کد: [Codepen](https://codepen.io/)/[Replit](https://replit.com/)** 💻 (@mehdiminaee)
+- 🎉 **[طراحی SVG](docs/pixels/feature_svg_drawing.png)** - قرعه کشی با AI 🎨
 - 🎉 چت: چت های متعدد، عناوین هوش مصنوعی، واردات/صادرات، حالت انتخاب
 - 🎉 رندر: Markdown، SVG، بلوک های کد بهبود یافته
 - 🎉 ادغام: شناسه سازمان OpenAI
-- 🎉 [Cloudflare deployment instructions](docs/deploy-cloudflare.md),
+- 🎉 [دستورالعمل های استقرار Cloudflare](docs/deploy-cloudflare.md),
   [awesome-agi](https://github.com/enricoros/awesome-agi)
 - 🎉 [Typing Avatars](docs/pixels/gif_typing_040123.gif) ⌨️
   <!-- p><a href="docs/pixels/gif_typing_040123.gif"><img src="docs/pixels/gif_typing_040123.gif" width='700' alt="آواتارهای تایپ جدید"/></a></p -->
@@ -43,7 +43,7 @@ Clean UX، w/tokens counters
 - 🎉 **حریم خصوصی**: user-owned API keys 🔑 و محل ذخیره سازی 🛡️
 - 🎉 **مفاد** - ضمیمه یا [Drag & Drop files](docs/pixels/feature_drop_target.png) برای اضافه کردن آنها به درخواست 📁
 - 🎉 **برجسته سازی نحو** - برای چندین زبان 🌈
-- 🎉 **Code Execution: Sandpack
+- 🎉 **اجرای کد: Sandpack
   ** - [اکنون در شعبه]((https://mifai-kiyosk.vercel.app/)) `variant-code-execution`
 - 🎉 با GPT-4 و 3.5 Turbo گپ بزنید 🧠💨
 - 🎉 پخش زمان واقعی پاسخ های هوش مصنوعی ⚡
@@ -62,23 +62,20 @@ Clean UX، w/tokens counters
 * Deploy your [fork](https://github.com/enricoros/big-agi/fork) and surprise your friends with big-GPT
   energy!
 * We love code - send PRs! ...
-  🎭[Editing Personas](https://github.com/enricoros/big-agi/issues/35),
-  🧩[Reasoning Systems](https://github.com/enricoros/big-agi/issues/36),
-  🌐[Community Templates](https://github.com/enricoros/big-agi/issues/35),
-  and [your big-IDEA](https://github.com/enricoros/big-agi/issues/new?labels=RFC&body=Describe+the+idea)s❗
+  🎭[ویرایش پرسوناها](https://github.com/madmaxmehdi44/mifai-kiyosk),
+  🧩[سیستم های استدلال](https://github.com/madmaxmehdi44/mifai-kiyosk),
+  🌐[الگوهای انجمن](https://github.com/madmaxmehdi44/mifai-kiyosk),
+  و [ایده بزرگ شما](https://github.com/madmaxmehdi44/mifai-kiyosk)s❗
 
-## Why this? 💡
+## چرا این؟ 💡
 
-Because the official Chat ___lacks important features___, is ___more limited than the api___, at times
-___slow or unavailable___, and you cannot deploy it yourself, remix it, add features, or share it with
-your friends.
-Our users report that ___big-AGI is faster___, ___more reliable___, and ___features rich___
-with features that matter to them.
+از آنجا که چت رسمی ___ فاقد ویژگی های مهم است___، گاهی اوقات ___ محدودتر از api___ است 73 ___آهسته یا در دسترس نیست___، و شما نمی توانید خودتان آن را مستقر کنید، آن را دوباره میکس کنید، ویژگی هایی اضافه کنید، یا آن را با آن به اشتراک بگذارید 74 دوستان تو.
 
-***Outdated*** screenshot below:
-![Ask away, paste a ton, copy the gems](docs/pixels/zold_screenshot_web.png)
+کاربران ما گزارش می دهند که ___MiFAI-KiyOsk سریعتر است___، ___قابل اعتمادتر___، و ___ویژگی های غنی___ 76 با ویژگی هایی که برای آنها مهم است. 77
+***منسوخ*** اسکرین شات زیر:
+![بپرسید، یک تن بچسبانید، سنگهای قیمتی را کپی کنید](docs/pixels/zold_screenshot_web.png)
 
-## Code 🧩
+## کد 🧩
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=&logo=react&logoColor=black)
@@ -87,8 +84,8 @@ with features that matter to them.
 Clone this repo, install the dependencies, and run the development server:
 
 ```bash
-git clone https://github.com/enricoros/big-agi.git
-cd big-agi
+git clone https://github.com/madmaxmehdi44/mifai-kiyosk.git
+cd mifai-kiyosk
 npm install
 npm run dev
 ```
@@ -106,11 +103,11 @@ Now the app should be running on `http://localhost:3000`
 
 This project is licensed under the MIT License.
 
-[![GitHub stars](https://img.shields.io/github/stars/enricoros/big-agi)](https://github.com/enricoros/big-agi/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/enricoros/big-agi)](https://github.com/enricoros/big-agi/network)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/enricoros/big-agi)](https://github.com/enricoros/big-agi/pulls)
-[![License](https://img.shields.io/github/license/enricoros/big-agi)](https://github.com/enricoros/big-agi/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/enricoros/big-agi)](https://github.com/madmaxmehdi44/mifai-kiyosk.git)
+[![GitHub forks](https://img.shields.io/github/forks/enricoros/big-agi)](https://github.com/madmaxmehdi44/mifai-kiyosk.git)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/enricoros/big-agi)](https://github.com/madmaxmehdi44/mifai-kiyosk.git)
+[![License](https://img.shields.io/github/license/enricoros/big-agi)](https://github.com/madmaxmehdi44/mifai-kiyosk.git)
 
-[//]: # ([![GitHub issues]&#40;https://img.shields.io/github/issues/enricoros/big-agi&#41;]&#40;https://github.com/enricoros/big-agi/issues&#41;)
+[//]: # ([![GitHub issues]&#40;https://img.shields.io/github/issues/enricoros/big-agi&#41;]&#40;https://github.com/madmaxmehdi44/mifai-kiyosk.git;)
 
 Made with 💙
