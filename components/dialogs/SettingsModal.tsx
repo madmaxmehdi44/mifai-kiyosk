@@ -456,7 +456,7 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
 
   const isValidOpenAIKey = isValidOpenAIApiKey(apiKey);
 
-  const hideOnMobile = { display: { xs: 'none', md: 'flex' } };
+  const hideOnMobile = { display: { xs: 'flex', md: 'flex' } };
 
   return (
     <Modal open={open} onClose={onClose}>
