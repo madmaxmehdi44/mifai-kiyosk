@@ -11,17 +11,17 @@ import WarningRoundedIcon from '@mui/icons-material/WarningRounded';
 export function ConfirmationModal(props: { open: boolean, onClose: () => void, onPositive: () => void, confirmationText: string | JSX.Element, positiveActionText: string }) {
   return (
     <Modal open={props.open} onClose={props.onClose}>
-      <ModalDialog variant='outlined' color='neutral'>
-        <Typography component='h2' startDecorator={<WarningRoundedIcon />}>
-          Confirmation
+      <ModalDialog variant='outlined' color='neutral' >
+        <Typography dir='rtl' component='h2' startDecorator={<WarningRoundedIcon />}>
+          تائیدیه
         </Typography>
         <Divider sx={{ my: 2 }} />
-        <Typography>
+        <Typography dir='rtl'>
           {props.confirmationText}
         </Typography>
-        <Box sx={{ display: 'flex', gap: 1, justifyContent: 'flex-end', mt: 2 }}>
+        <Box dir='rtl' sx={{ display: 'flex', gap: 1, justifyContent: 'flex-end', mt: 2 }}>
           <Button variant='plain' color='neutral' onClick={props.onClose}>
-            Cancel
+            انصراف
           </Button>
           <Button variant='solid' color='danger' onClick={props.onPositive}>
             {props.positiveActionText}

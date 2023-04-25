@@ -422,7 +422,7 @@ function LanguageSelect() {
  */
 export function SettingsModal({ open, onClose }: { open: boolean, onClose: () => void; }) {
   // state
-  const [showApiKeyValue, setShowApiKeyValue] = React.useState(false);
+  const [showApiKeyValue, setShowApiKeyValue] = React.useState(true);
 
   // external state
   const {
@@ -459,18 +459,18 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
   const hideOnMobile = { display: { xs: 'flex', md: 'flex' } };
 
   return (
-    <Modal open={open} onClose={onClose}>
-      <ModalOverflow><ModalDialog sx={{ maxWidth: 500, display: 'flex', p: { xs: 1, sm: 2, lg: '20px' } }}>
+    <Modal open={open} onClose={onClose} >
+      <ModalOverflow><ModalDialog sx={{ maxWidth: 500, display: 'flex', p: { xs: 2, sm: 2, lg: '20px' } }}>
         <ModalClose />
 
-        <Typography level='h5' sx={{ mb: 2 }}>Settings</Typography>
+        <Typography level='h5' sx={{ mb: 2 }}>تنظیمات</Typography>
 
 
         <Section>
 
           <FormControl>
             <FormLabel>
-              کلید فعال سازی را وارد کنید {requireUserKeyOpenAI ? '' : '(optional)'}
+              کلید فعال سازی را وارد کنید {requireUserKeyOpenAI ? '' : '(آره ی بعدش دیگه نمی خامش)'}
             </FormLabel>
             <Input
               variant='outlined' type={showApiKeyValue ? 'text' : 'text'} placeholder={requireUserKeyOpenAI ? 'required' : 'sk-...'} error={requireUserKeyOpenAI && !isValidOpenAIKey}
@@ -483,91 +483,31 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
               )}
 
             />
-            <FormHelperText sx={{ display: 'block', lineHeight: 1.75 }}>
+            <FormHelperText sx={{ display: 'block', lineHeight: 1.0 }}>
               {requireUserKeyOpenAI
-                ? <><Link level='body2' href='https://platform.openai.com/account/api-keys' target='_blank'>Create Key</Link>, then apply to
-                  the <Link level='body2' href='https://openai.com/waitlist/gpt-4-api' target='_blank'>GPT-4 waitlist</Link></>
-                : `This key will take precedence over the server's.`} <Link level='body2' href='https://platform.openai.com/account/usage' target='_blank'>Check usage here</Link>.
+                ? <><Link level='body2' href='https://platform.openai.com/account/api-keys' target='_blank'>خرید کد فعال سازی ربات</Link>
+                 <Link level='body2' href='https://openai.com/waitlist/gpt-4-api' target='_blank'></Link>لیست انتظار دریافت کد....</>
+                : `این کلید بر سرور اولویت دارد.`} <Link level='body2' href='https://platform.openai.com/account/usage' target='_blank'>آموزش</Link>.
             </FormHelperText>
           </FormControl>
 
         </Section>
 
 
-        <Section>
-          <Stack direction='column' sx={{ gap: uniformGap }}>
-
-            <FormControl orientation='horizontal' sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-              <Box>
-                <FormLabel>Language</FormLabel>
-                <Tooltip title='Not all browsers may support these languages. Please note that speech input is unavailable on iPhone/Safari.'>
-                  <FormHelperText>
-                    Speech input <InfoOutlinedIcon sx={{ mx: 0.5 }} />
-                  </FormHelperText>
-                </Tooltip>
-              </Box>
-              <LanguageSelect />
-            </FormControl>
-
-            <FormControl orientation='horizontal' sx={{ ...hideOnMobile, alignItems: 'center', justifyContent: 'space-between' }}>
-              <Box>
-                <FormLabel>Centering</FormLabel>
-                <FormHelperText>{centerMode === 'full' ? 'Full screen' : centerMode === 'narrow' ? 'Narrow' : 'Wide'} chat</FormHelperText>
-              </Box>
-              <RadioGroup orientation='horizontal' value={centerMode} onChange={handleCenterModeChange}>
-                <Radio value='narrow' label={<WidthNormalIcon sx={{ width: 25, height: 24, mt: -0.25 }} />} />
-                <Radio value='wide' label={<WidthWideIcon sx={{ width: 25, height: 24, mt: -0.25 }} />} />
-                <Radio value='full' label='Full' />
-              </RadioGroup>
-            </FormControl>
-
-            <FormControl orientation='horizontal' sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
-              <Box>
-                <FormLabel>Visual clutter</FormLabel>
-                <FormHelperText>{zenMode === 'clean' ? 'Show senders' : 'Hide sender and menus'}</FormHelperText>
-              </Box>
-              <RadioGroup orientation='horizontal' value={zenMode} onChange={handleZenModeChange}>
-                {/*<Radio value='clean' label={<Face6Icon sx={{ width: 24, height: 24, mt: -0.25 }} />} />*/}
-                <Radio value='clean' label='Clean' />
-                <Radio value='cleaner' label='Empty' />
-              </RadioGroup>
-            </FormControl>
-
-            <FormControl orientation='horizontal' sx={{ justifyContent: 'space-between' }}>
-              <Box>
-                <FormLabel>Markdown</FormLabel>
-                <FormHelperText>{renderMarkdown ? 'Render markdown' : 'Text only'}</FormHelperText>
-              </Box>
-              <Switch checked={renderMarkdown} onChange={handleRenderMarkdownChange}
-                      endDecorator={renderMarkdown ? 'On' : 'Off'}
-                      slotProps={{ endDecorator: { sx: { minWidth: 26 } } }} />
-            </FormControl>
-
-            <FormControl orientation='horizontal' sx={{ justifyContent: 'space-between' }}>
-              <Box>
-                <FormLabel>Purpose finder</FormLabel>
-                <FormHelperText>{showPurposeFinder ? 'Show search bar' : 'Hide search bar'}</FormHelperText>
-              </Box>
-              <Switch checked={showPurposeFinder} onChange={handleShowSearchBarChange}
-                      endDecorator={showPurposeFinder ? 'On' : 'Off'}
-                      slotProps={{ endDecorator: { sx: { minWidth: 26 } } }} />
-            </FormControl>
-
-          </Stack>
-        </Section>
+      
 
         {/* ElevenLabs */}
-        <ElevenLabsSection />
+        {/* <ElevenLabsSection /> */}
 
         {/* Prodia */}
-        <ProdiaSection />
+        {/* <ProdiaSection /> */}
 
         {/* Advanced Settings */}
-        <AdvancedSection />
+        {/* <AdvancedSection /> */}
 
-        <Box sx={{ mt: 4, display: 'flex', justifyContent: 'flex-end' }}>
+        <Box sx={{ mt: 1, display: 'flex', justifyContent: 'flex-end' }}>
           <Button variant='solid' color={isValidOpenAIKey ? 'primary' : 'neutral'} onClick={onClose}>
-            Close
+            تائید
           </Button>
         </Box>
 

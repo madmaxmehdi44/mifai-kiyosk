@@ -127,9 +127,9 @@ export function Chat(props: { onShowSettings: () => void, sx?: SxProps }) {
       <ConfirmationModal
         open={!!publishConversationId} onClose={() => setPublishConversationId(null)} onPositive={handleConfirmedPublishConversation}
         confirmationText={<>
-          Share your conversation anonymously on <Link href='https://paste.gg' target='_blank'>paste.gg</Link>?
-          It will be unlisted and available to share and read for 30 days. Keep in mind, deletion may not be possible.
-          Are you sure you want to proceed?
+          گفتگوی خود را به صورت ناشناس در <Link href='https://paste.gg' target='_blank'>paste.gg</Link> به اشتراک بگذارید؟
+           فهرست نشده و برای اشتراک‌گذاری و خواندن به مدت 30 روز در دسترس خواهد بود. به خاطر داشته باشید که حذف ممکن است امکان پذیر نباشد.
+           آیا مطمئن هستید که می خواهید ادامه دهید؟
         </>} positiveActionText={'Understood, upload to paste.gg'}
       />
 

@@ -196,7 +196,7 @@ function RenderCode(props: { codeBlock: CodeBlock, sx?: SxProps }) {
           opacity: 0, transition: 'opacity 0.3s',
         }}>
         {hasSVG && (
-          <Tooltip title={renderSVG ? 'Show Code' : 'Render SVG'} variant='solid'>
+          <Tooltip title={renderSVG ? 'نمایش کد' : 'رندر SVG'} variant='solid'>
             <IconButton variant={renderSVG ? 'solid' : 'soft'} color='neutral' onClick={() => setShowSVG(!showSVG)}>
               <ShapeLineOutlinedIcon />
             </IconButton>
@@ -208,7 +208,7 @@ function RenderCode(props: { codeBlock: CodeBlock, sx?: SxProps }) {
         {hasReplitLanguage &&
           <OpenInReplit codeBlock={{ code: props.codeBlock.code, language: props.codeBlock.language || undefined }} />
         }
-        <Tooltip title='Copy Code' variant='solid'>
+        <Tooltip title='کپی کد' variant='solid'>
           <IconButton variant='outlined' color='neutral' onClick={handleCopyToClipboard}>
             <ContentCopyIcon />
           </IconButton>
@@ -233,7 +233,7 @@ const RenderMarkdown = ({ textBlock }: { textBlock: TextBlock }) => {
       '& table': { width: 'inherit !important' },           // un-break auto-width (tables have 'max-content', which overflows)
       '--color-canvas-default': 'transparent !important',   // remove the default background color
       fontFamily: `inherit !important`,                     // use the default font family
-      lineHeight: '1.75 !important',                        // line-height: 1.75 like the text block
+      lineHeight: '1.0 !important',                        // line-height: 1.75 like the text block
     }}>
     <ReactMarkdown remarkPlugins={[remarkGfm]}>{textBlock.content}</ReactMarkdown>
   </Box>;
@@ -242,7 +242,7 @@ const RenderMarkdown = ({ textBlock }: { textBlock: TextBlock }) => {
 const RenderText = ({ textBlock }: { textBlock: TextBlock }) =>
   <Typography
     sx={{
-      lineHeight: 1.75,
+      lineHeight: 1.0,
       mx: 1.5,
       overflowWrap: 'anywhere',
       whiteSpace: 'break-spaces',
@@ -300,15 +300,15 @@ function explainErrorInMessage(text: string, isAssistant: boolean, modelId?: str
     if (text.startsWith('OpenAI API error: 429 Too Many Requests')) {
       // TODO: retry at the api/chat level a few times instead of showing this error
       errorMessage = <>
-        The model appears to be occupied at the moment. Kindly select <b>GPT-3.5 Turbo</b>,
-        or give it another go by selecting <b>Run again</b> from the message menu.
+        به نظر می رسد مدل در حال حاضر اشغال شده است. لطفاً <b>GPT-3.5 Turbo</b> را انتخاب کنید،
+         یا با انتخاب <b>اجرای مجدد</b> از منوی پیام، دوباره به آن اقدام کنید.
       </>;
     } else if (text.includes('"model_not_found"')) {
       // note that "model_not_found" is different than "The model `gpt-xyz` does not exist" message
       errorMessage = <>
-        The API key appears to be unauthorized for {modelId || 'this model'}. You can change to <b>GPT-3.5
-        Turbo</b> and simultaneously <Link noLinkStyle href='https://openai.com/waitlist/gpt-4-api' target='_blank'>request
-        access</Link> to the desired model.
+        به نظر می رسد کلید API برای آن غیرمجاز است{modelId || 'this model'}. می توانید به <b>GPT-3.5 تغییر دهید
+         توربو</b>و به طور همزمان<Link noLinkStyle href='https://openai.com/waitlist/gpt-4-api' target='_blank'>درخواست
+         دسترسی داشته باشید</Link> به مدل مورد نظر
       </>;
     } else if (text.includes('"context_length_exceeded"')) {
       // TODO: propose to summarize or split the input?
@@ -316,22 +316,21 @@ function explainErrorInMessage(text: string, isAssistant: boolean, modelId?: str
       const match = pattern.exec(text);
       const usedText = match ? <b>{parseInt(match[2] || '0').toLocaleString()} tokens &gt; {parseInt(match[1] || '0').toLocaleString()}</b> : '';
       errorMessage = <>
-        This thread <b>surpasses the maximum size</b> allowed for {modelId || 'this model'}. {usedText}.
-        Please consider removing some earlier messages from the conversation, start a new conversation,
-        choose a model with larger context, or submit a shorter new message.
+        موضوع <b>از حداکثر اندازه مجاز فراتر است</b> است. {modelId || 'this model'}. {usedText}.
+        لطفاً برخی از پیام‌های قبلی را از مکالمه حذف کنید، مکالمه جدیدی را شروع کنید،
+         مدلی با زمینه بزرگتر انتخاب کنید یا یک پیام جدید کوتاهتر ارسال کنید.
       </>;
     } else if (text.includes('"invalid_api_key"')) {
       errorMessage = <>
-        The API key appears to not be correct or to have expired.
-        Please <Link noLinkStyle href='https://openai.com/account/api-keys' target='_blank'>check your API key</Link> and
-        update it in the <b>Settings</b> menu.
+        به نظر می رسد کلید API صحیح نیست یا منقضی شده است.
+         لطفا <Link noLinkStyle href='https://openai.com/account/api-keys' target='_blank'>کلید API</Link> خود را بررسی کنید و
+         آن را در منوی <b>تنظیمات</b> به روز کنید.
       </>;
     } else if (text.includes('"insufficient_quota"')) {
       errorMessage = <>
-        The API key appears to have <b>insufficient quota</b>. Please
-        check <Link noLinkStyle href='https://platform.openai.com/account/usage' target='_blank'>your usage</Link> and
-        make sure the usage is under <Link noLinkStyle href='https://platform.openai.com/account/billing/limits' target='_blank'>the limits</Link>.
-      </>;
+        به نظر می رسد کلید API <b>سهمیه کافی ندارد</b>. لطفا
+         <Link noLinkStyle href='https://platform.openai.com/account/usage' target='_blank'>مصرف خود</Link> را بررسی کنید و
+         مطمئن شوید که استفاده تحت <Link noLinkStyle href='https://platform.openai.com/account/billing/limits' target='_blank'>محدودیت ها</Link> باشد. </>;
     }
   }
   return { errorMessage, isAssistantError };
@@ -595,12 +594,12 @@ export function ChatMessage(props: { message: DMessage, isBottom: boolean, onMes
           open anchorEl={menuAnchor} onClose={closeOperationsMenu}>
           <MenuItem onClick={handleMenuCopy}>
             <ListItemDecorator><ContentCopyIcon /></ListItemDecorator>
-            Copy
+            کپی
           </MenuItem>
           {isSpeakable && (
             <MenuItem onClick={handleMenuSpeak}>
               <ListItemDecorator><RecordVoiceOverIcon /></ListItemDecorator>
-              Speak
+              صحبت کردن
             </MenuItem>
           )}
           <MenuItem onClick={handleMenuEdit}>
@@ -612,18 +611,18 @@ export function ChatMessage(props: { message: DMessage, isBottom: boolean, onMes
           {fromAssistant && (
             <MenuItem onClick={handleMenuRunAgain}>
               <ListItemDecorator><ReplayIcon /></ListItemDecorator>
-              Retry
+              سعی مجدد
             </MenuItem>
           )}
           {fromUser && (
             <MenuItem onClick={handleMenuRunAgain}>
               <ListItemDecorator><FastForwardIcon /></ListItemDecorator>
-              Run Again
+              اجرای دوباره
             </MenuItem>
           )}
           <MenuItem onClick={props.onMessageDelete} disabled={false /*fromSystem*/}>
             <ListItemDecorator><ClearIcon /></ListItemDecorator>
-            Delete
+            حذف
           </MenuItem>
         </Menu>
       )}

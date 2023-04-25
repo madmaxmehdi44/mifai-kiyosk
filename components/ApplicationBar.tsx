@@ -203,56 +203,56 @@ export function ApplicationBar(props: {
     />
 
     {/* Right menu content */}
-    <Menu
+    <Menu dir='rtl'
       variant='plain' color='neutral' size='lg' placement='bottom-end' sx={{ minWidth: 280 }}
       open={!!actionsMenuAnchor} anchorEl={actionsMenuAnchor} onClose={closeActionsMenu}
       disablePortal={false}>
 
       <MenuItem onClick={handleDarkModeToggle}>
         <ListItemDecorator><DarkModeIcon /></ListItemDecorator>
-        Dark
+        تاریک
         <Switch checked={colorMode === 'dark'} onChange={handleDarkModeToggle} sx={{ ml: 'auto' }} />
       </MenuItem>
 
-      <MenuItem onClick={handleSystemMessagesToggle}>
+      <MenuItem  onClick={handleSystemMessagesToggle}>
         <ListItemDecorator><SettingsSuggestIcon /></ListItemDecorator>
-        System text
-        <Switch checked={showSystemMessages} onChange={handleSystemMessagesToggle} sx={{ ml: 'auto' }} />
+        متن سیستم
+        <Switch  checked={showSystemMessages} onChange={handleSystemMessagesToggle} sx={{ ml: 'auto',color:'orchid' }} />
       </MenuItem>
 
       <MenuItem onClick={handleActionShowSettings}>
         <ListItemDecorator><SettingsOutlinedIcon /></ListItemDecorator>
-        Settings
+        تنظیمات
       </MenuItem>
 
       <ListDivider />
 
       <MenuItem disabled={!props.conversationId || isConversationEmpty} onClick={handleConversationPublish}>
         <ListItemDecorator>
-          {/*<Badge size='sm' color='primary'>*/}
+          <Badge size='sm' color='primary'>
           <ExitToAppIcon />
-          {/*</Badge>*/}
+          </Badge>
         </ListItemDecorator>
-        Share via paste.gg
+        اشتراک گزاری paste.gg
       </MenuItem>
 
       <MenuItem disabled={!props.conversationId || isConversationEmpty} onClick={handleConversationDownload}>
         <ListItemDecorator>
           <FileDownloadIcon />
         </ListItemDecorator>
-        Export conversation
+        دانلود مکاتبات
       </MenuItem>
 
       <ListDivider />
 
       <MenuItem disabled={!props.conversationId || isConversationEmpty} onClick={handleToggleMessageSelectionMode}>
         <ListItemDecorator>{props.isMessageSelectionMode ? <CheckBoxOutlinedIcon /> : <CheckBoxOutlineBlankOutlinedIcon />}</ListItemDecorator>
-        Select messages
+        انتخاب پیام ها
       </MenuItem>
 
       <MenuItem disabled={!props.conversationId || isConversationEmpty} onClick={handleConversationClear}>
         <ListItemDecorator><ClearIcon /></ListItemDecorator>
-        Clear conversation
+        حذف پیام ها
       </MenuItem>
     </Menu>
 
@@ -260,7 +260,7 @@ export function ApplicationBar(props: {
     {/* Modals */}
     <ConfirmationModal
       open={!!clearConfirmationId} onClose={() => setClearConfirmationId(null)} onPositive={handleConfirmedClearConversation}
-      confirmationText={'Are you sure you want to discard all the messages?'} positiveActionText={'Clear conversation'}
+      confirmationText={'آیا مطمئن هستید که می خواهید همه پیام ها را نادیده بگیرید؟'} positiveActionText={'Clear conversation'}
     />
 
     {!!conversationImportOutcome && (

@@ -53,17 +53,17 @@ const expandPromptTemplate = (template: string, dict: object) => (inputValue: st
 
 
 const attachFileLegend =
-  <Stack sx={{ p: 1, gap: 1, fontSize: '16px', fontWeight: 400 }}>
+  <Stack  sx={{ p: 1, gap: 1, fontSize: '16px', fontWeight: 400 }}>
     <Box sx={{ mb: 1, textAlign: 'center' }}>
-      Attach a file to the message
+    فایلی را به پیام پیوست کنید
     </Box>
-    <table>
+    <table dir='rtl'>
       <tbody>
       <tr>
         <td width={36}><PictureAsPdfIcon sx={{ width: 24, height: 24 }} /></td>
         <td><b>PDF</b></td>
         <td width={36} align='center' style={{ opacity: 0.5 }}>→</td>
-        <td>📝 Text (split manually)</td>
+        <td>📝 متن (تقسیم دستی)</td>
       </tr>
       <tr>
         <td><DataArrayIcon sx={{ width: 24, height: 24 }} /></td>
@@ -80,13 +80,13 @@ const attachFileLegend =
       </tbody>
     </table>
     <Box sx={{ mt: 1, fontSize: '14px' }}>
-      Drag & drop in chat for faster loads ⚡
+    برای بارگیری سریع‌تر، چت را بکشید و رها کنید ⚡
     </Box>
   </Stack>;
 
 const pasteClipboardLegend =
   <Box sx={{ p: 1, fontSize: '14px', fontWeight: 400 }}>
-    Converts Code and Tables to 📚 Markdown
+    کد و جداول را به 📚 Markdown تبدیل می کند
   </Box>;
 
 
@@ -103,7 +103,7 @@ const SendModeMenu = (props: { anchorEl: HTMLAnchorElement, sendMode: SendModeId
     variant='plain' color='neutral' size='md' placement='top-end' sx={{ minWidth: 320, overflow: 'auto' }}
     open anchorEl={props.anchorEl} onClose={props.onClose}>
 
-    <MenuItem color='neutral' selected>Conversation Mode</MenuItem>
+    <MenuItem color='neutral' selected>حالت مکالمه</MenuItem>
 
     <ListDivider />
 
@@ -131,7 +131,7 @@ const SentMessagesMenu = (props: {
     variant='plain' color='neutral' size='md' placement='top-end' sx={{ minWidth: 320, overflow: 'auto' }}
     open anchorEl={props.anchorEl} onClose={props.onClose}>
 
-    <MenuItem color='neutral' selected>Reuse messages 💬</MenuItem>
+    <MenuItem color='neutral' selected>استفاده مجدد از پیام ها 💬</MenuItem>
 
     <ListDivider />
 
@@ -145,7 +145,7 @@ const SentMessagesMenu = (props: {
 
     <MenuItem onClick={props.onClear}>
       <ListItemDecorator><ClearIcon /></ListItemDecorator>
-      Clear all
+      پاک کردن همه
     </MenuItem>
 
   </Menu>;
@@ -263,7 +263,7 @@ export function Composer(props: {
       } catch (error) {
         // show errors in the prompt box itself - FUTURE: show in a toast
         console.error(error);
-        newText = `${newText}\n\nError loading file ${file.name}: ${error}\n`;
+        newText = `${newText}\n\nخطا در بارگیری فایل ${file.name}: ${error}\n`;
       }
     }
 
@@ -399,8 +399,8 @@ export function Composer(props: {
   const prodiaApiKey = isValidProdiaApiKey(useSettingsStore(state => state.prodiaApiKey));
   const isProdiaConfigured = !requireUserKeyProdia || prodiaApiKey;
   const textPlaceholder: string = props.isDeveloperMode
-    ? 'Tell me what you need, add drop source files...'
-    : isProdiaConfigured ? 'Type, /imagine, or drop text files...' : 'Type a message, or drop text files...';
+    ? 'به من بگو چه نیازی داری، فایل های دراپ سورس اضافه کن...'
+    : isProdiaConfigured ? 'فایل های متنی را تایپ کنید، /تصور کن یا رها کنید...' : 'یک پیام تایپ کنید یا فایل های متنی را رها کنید...';
 
   return (
     <Box sx={props.sx}>
@@ -426,7 +426,7 @@ export function Composer(props: {
               title={attachFileLegend}>
               <Button fullWidth variant='plain' color='neutral' onClick={handleShowFilePicker} startDecorator={<UploadFileIcon />}
                       sx={{ ...hideOnMobile, justifyContent: 'flex-start' }}>
-                Attach
+                چسباندن
               </Button>
             </Tooltip>
 
@@ -435,12 +435,12 @@ export function Composer(props: {
             <IconButton variant='plain' color='neutral' onClick={handlePasteFromClipboard} sx={{ ...hideOnDesktop }}>
               <ContentPasteGoIcon />
             </IconButton>
-            <Tooltip
+            <Tooltip 
               variant='solid' placement='top-start'
               title={pasteClipboardLegend}>
               <Button fullWidth variant='plain' color='neutral' startDecorator={<ContentPasteGoIcon />} onClick={handlePasteFromClipboard}
                       sx={{ ...hideOnMobile, justifyContent: 'flex-start' }}>
-                {props.isDeveloperMode ? 'Paste code' : 'Paste'}
+                {props.isDeveloperMode ? 'چسباندن کد' : 'چسباندن'}
               </Button>
             </Tooltip>
 
@@ -495,7 +495,7 @@ export function Composer(props: {
               onDrop={handleOverlayDrop}>
               <PanToolIcon sx={{ width: 40, height: 40, pointerEvents: 'none' }} />
               <Typography level='body2' sx={{ pointerEvents: 'none' }}>
-                I will hold on to this for you
+              من این را برای شما نگه می دارم
               </Typography>
             </Card>
 
@@ -505,9 +505,9 @@ export function Composer(props: {
 
         {/* Send pane */}
         <Grid xs={12} md={3}>
-          <Stack spacing={2}>
+          <Stack  spacing={2}>
 
-            <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+            <Box  sx={{ display: 'flex', flexDirection: 'row' }}>
 
               {/* [mobile-only] Sent messages arrow */}
               {sentMessages.length > 0 && (
@@ -519,10 +519,10 @@ export function Composer(props: {
               {/* Send / Stop */}
               {assistantTyping
                 ? <Button fullWidth variant='soft' color='primary' disabled={!props.conversationId} onClick={handleStopClicked} endDecorator={<StopOutlinedIcon />}>
-                  Stop
+                  توقف
                 </Button>
                 : <Button fullWidth variant='solid' color='primary' disabled={!props.conversationId} onClick={handleSendClicked} onDoubleClick={handleShowSendMode} endDecorator={<TelegramIcon />}>
-                  {sendModeId === 'react' ? 'ReAct' : 'Chat'}
+                  {sendModeId === 'react' ? 'ReAct' : 'چت'}
                 </Button>}
             </Box>
 
@@ -530,7 +530,7 @@ export function Composer(props: {
             <Stack direction='row' spacing={1} sx={{ ...hideOnMobile, flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'flex-end' }}>
               {sentMessages.length > 0 && (
                 <Button fullWidth variant='plain' color='neutral' startDecorator={<KeyboardArrowUpIcon />} onClick={showSentMessages}>
-                  History
+                  تاریخچه
                 </Button>
               )}
             </Stack>
@@ -563,7 +563,7 @@ export function Composer(props: {
         {/* Clear confirmation modal */}
         <ConfirmationModal
           open={confirmClearSent} onClose={handleCancelClearSent} onPositive={handleConfirmedClearSent}
-          confirmationText={'Are you sure you want to clear all your sent messages?'} positiveActionText={'Clear all'}
+          confirmationText={'آیا مطمئن هستید که می خواهید همه پیام های ارسالی خود را پاک کنید؟'} positiveActionText={'Clear all'}
         />
 
       </Grid>

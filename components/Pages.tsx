@@ -54,7 +54,7 @@ function ConversationListItem(props: {
   };
 
   return (
-    <MenuItem
+    <MenuItem dir='rtl'
       variant={props.isActive ? 'solid' : 'plain'} color='neutral'
       onClick={() => props.conversationActivate(props.conversationId)}
       sx={{
@@ -190,15 +190,15 @@ export function PagesMenu(props: { conversationId: string | null, pagesMenuAncho
       {/*  </Typography>*/}
       {/*</ListItem>*/}
 
-      <MenuItem onClick={handleNew}>
+      <MenuItem onClick={handleNew}  dir='rtl'>
         <ListItemDecorator><AddIcon /></ListItemDecorator>
         <Typography>
-          {NewPrefix}New
+          {NewPrefix}جدید
         </Typography>
       </MenuItem>
 
       {conversationIDs.map(conversationId =>
-        <ConversationListItem
+        <ConversationListItem 
           key={'c-id-' + conversationId}
           conversationId={conversationId}
           isActive={conversationId === props.conversationId}
@@ -210,17 +210,17 @@ export function PagesMenu(props: { conversationId: string | null, pagesMenuAncho
 
       <ListDivider />
 
-      <MenuItem onClick={props.onImportConversation}>
+      <MenuItem onClick={props.onImportConversation} dir='rtl'>
         <ListItemDecorator>
           <FileUploadIcon />
         </ListItemDecorator>
-        Import conversation
+        آپلود مکالمات
       </MenuItem>
 
-      <MenuItem disabled={!hasChats} onClick={handleDeleteAll}>
+      <MenuItem disabled={!hasChats} onClick={handleDeleteAll} dir='rtl'>
         <ListItemDecorator><DeleteOutlineIcon /></ListItemDecorator>
         <Typography>
-          Delete all
+          حذف همگی
         </Typography>
       </MenuItem>
 
@@ -239,14 +239,14 @@ export function PagesMenu(props: { conversationId: string | null, pagesMenuAncho
     </Menu>
 
     {/* Confirmations */}
-    <ConfirmationModal
+    <ConfirmationModal 
       open={!!deleteConfirmationId} onClose={() => setDeleteConfirmationId(null)} onPositive={handleConfirmedDeleteConversation}
       confirmationText={deleteConfirmationId === SPECIAL_ID_ALL_CHATS
-        ? 'Are you absolutely sure you want to delete ALL conversations? This action cannot be undone.'
-        : 'Are you sure you want to delete this conversation?'}
+        ? 'آیا کاملاً مطمئن هستید که می خواهید همه مکالمات را حذف کنید؟ این عمل قابل لغو نیست.'
+        : 'آیا مطمئنید که می خواهید این مکالمه را حذف کنید؟'}
       positiveActionText={deleteConfirmationId === SPECIAL_ID_ALL_CHATS
-        ? 'Yes, delete all'
-        : 'Delete conversation'}
+        ? 'بله، همه را حذف کنید'
+        : 'مکالمه را حذف کنید'}
     />
 
   </>;

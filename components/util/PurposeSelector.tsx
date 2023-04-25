@@ -141,7 +141,7 @@ export function PurposeSelector(props: { conversationId: string, runExample: (ex
           هدف هوش مصنوعی را انتخاب کنید
           </Typography>
           <Button variant='plain' color='neutral' size='sm' onClick={toggleEditMode}>
-            {editMode ? 'Done' : 'Edit'}
+            {editMode ? 'تائید' : 'ویرایش'}
           </Button>
         </Box>
 
