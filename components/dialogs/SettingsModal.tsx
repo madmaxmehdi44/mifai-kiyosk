@@ -470,10 +470,10 @@ export function SettingsModal({ open, onClose }: { open: boolean, onClose: () =>
 
           <FormControl>
             <FormLabel>
-              OpenAI API Key {requireUserKeyOpenAI ? '' : '(optional)'}
+              کلید فعال سازی را وارد کنید {requireUserKeyOpenAI ? '' : '(optional)'}
             </FormLabel>
             <Input
-              variant='outlined' type={showApiKeyValue ? 'text' : 'password'} placeholder={requireUserKeyOpenAI ? 'required' : 'sk-...'} error={requireUserKeyOpenAI && !isValidOpenAIKey}
+              variant='outlined' type={showApiKeyValue ? 'text' : 'text'} placeholder={requireUserKeyOpenAI ? 'required' : 'sk-...'} error={requireUserKeyOpenAI && !isValidOpenAIKey}
               value={apiKey} onChange={handleApiKeyChange}
               startDecorator={<KeyIcon />}
               endDecorator={!!apiKey && (

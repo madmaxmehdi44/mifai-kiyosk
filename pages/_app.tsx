@@ -28,7 +28,7 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
       </Head>
       {/* Rect-query provider */}
       <QueryClientProvider client={queryClient}>
-        <CssVarsProvider defaultMode='light' theme={theme}>
+        <CssVarsProvider defaultMode='dark' theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...pageProps} />
