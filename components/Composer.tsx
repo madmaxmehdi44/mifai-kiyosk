@@ -371,7 +371,7 @@ export function Composer(props: {
 
   const handleOverlayDragOver = (e: React.DragEvent) => {
     eatDragEvent(e);
-    e.dataTransfer.dropEffect = 'copy';
+    // e.dataTransfer.dropEffect = 'copy';
   };
 
   const handleOverlayDrop = async (e: React.DragEvent) => {

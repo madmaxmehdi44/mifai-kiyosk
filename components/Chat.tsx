@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { shallow } from 'zustand/shallow';
-import '@fontsource/public-sans';
 
 import { Box, useTheme } from '@mui/joy';
 import { SxProps } from '@mui/joy/styles/types';
