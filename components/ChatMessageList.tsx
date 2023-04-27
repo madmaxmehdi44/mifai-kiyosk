@@ -79,21 +79,21 @@ export function ChatMessageList(props: { conversationId: string | null, isMessag
 
 
   // scrollbar style
-  const scrollbarStyle: SxProps = {
-    '&::-webkit-scrollbar': {
-      md: {
-        width: 8,
-        background: theme.vars.palette.neutral.plainHoverBg,
-      },
-    },
-    '&::-webkit-scrollbar-thumb': {
-      background: theme.vars.palette.neutral.solidBg,
-      borderRadius: 6,
-    },
-    '&::-webkit-scrollbar-thumb:hover': {
-      background: theme.vars.palette.neutral.solidHoverBg,
-    },
-  };
+  // const scrollbarStyle: SxProps = {
+  //   '&::-webkit-scrollbar': {
+  //     md: {
+  //       width: 8,
+  //       background: theme.vars.palette.neutral.plainHoverBg,
+  //     },
+  //   },
+  //   '&::-webkit-scrollbar-thumb': {
+  //     background: theme.vars.palette.neutral.solidBg,
+  //     borderRadius: 6,
+  //   },
+  //   '&::-webkit-scrollbar-thumb:hover': {
+  //     background: theme.vars.palette.neutral.solidHoverBg,
+  //   },
+  // };
 
   return (
     <List sx={{
