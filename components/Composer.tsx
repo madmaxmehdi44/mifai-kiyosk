@@ -242,7 +242,7 @@ export function Composer(props: {
 
   const handleMicClicked = () => toggleRecording();
 
-  const micColor = isSpeechError ? 'danger' : isRecordingSpeech ? 'warning' : isRecordingAudio ? 'warning' : 'neutral';
+  const micColor = isSpeechError ? 'warning' : isRecordingSpeech ? 'danger' : isRecordingAudio ? 'success' : 'primary';
   const micVariant = isRecordingSpeech ? 'solid' : isRecordingAudio ? 'solid' : 'plain';
 
   async function loadAndAttachFiles(files: FileList) {
@@ -371,7 +371,7 @@ export function Composer(props: {
 
   const handleOverlayDragOver = (e: React.DragEvent) => {
     eatDragEvent(e);
-    // e.dataTransfer.dropEffect = 'copy';
+    e.dataTransfer.dropEffect = 'copy';
   };
 
   const handleOverlayDrop = async (e: React.DragEvent) => {
@@ -418,13 +418,13 @@ export function Composer(props: {
               <MicButton variant={micVariant} color={micColor} onClick={handleMicClicked} />
             </Box>}
 
-            <IconButton variant='plain' color='neutral' onClick={handleShowFilePicker} sx={{ ...hideOnDesktop }}>
+            <IconButton variant='plain' color='info' onClick={handleShowFilePicker} sx={{ ...hideOnDesktop }}>
               <UploadFileIcon />
             </IconButton>
             <Tooltip
               variant='solid' placement='top-start'
               title={attachFileLegend}>
-              <Button fullWidth variant='plain' color='neutral' onClick={handleShowFilePicker} startDecorator={<UploadFileIcon />}
+              <Button fullWidth variant='plain' color='warning' onClick={handleShowFilePicker} startDecorator={<UploadFileIcon />}
                       sx={{ ...hideOnMobile, justifyContent: 'flex-start' }}>
                 چسباندن
               </Button>
@@ -507,22 +507,22 @@ export function Composer(props: {
         <Grid xs={12} md={3}>
           <Stack  spacing={2}>
 
-            <Box  sx={{ display: 'flex', flexDirection: 'row' }}>
+            <Box  sx={{ display: 'grid', flexDirection: 'row' }}>
 
               {/* [mobile-only] Sent messages arrow */}
-              {sentMessages.length > 0 && (
+              {/* {sentMessages.length > 0 && (
                 <IconButton variant='plain' color='neutral' onClick={showSentMessages} sx={{ ...hideOnDesktop, mr: { xs: 1, md: 2 } }}>
                   <KeyboardArrowUpIcon />
                 </IconButton>
-              )}
+              )} */}
 
               {/* Send / Stop */}
               {assistantTyping
-                ? <Button fullWidth variant='soft' color='primary' disabled={!props.conversationId} onClick={handleStopClicked} endDecorator={<StopOutlinedIcon />}>
+                ? <Button  fullWidth variant='soft' color='primary' disabled={!props.conversationId} onClick={handleStopClicked} endDecorator={<StopOutlinedIcon />}>
                   توقف
                 </Button>
                 : <Button fullWidth variant='solid' color='primary' disabled={!props.conversationId} onClick={handleSendClicked} onDoubleClick={handleShowSendMode} endDecorator={<TelegramIcon />}>
-                  {sendModeId === 'react' ? 'ReAct' : 'چت'}
+                  {sendModeId === 'react' ? 'ReAct' : 'chat'}
                 </Button>}
             </Box>
 

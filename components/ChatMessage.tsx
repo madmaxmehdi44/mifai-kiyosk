@@ -159,7 +159,7 @@ const parseBlocks = (forceText: boolean, text: string): Block[] => {
 /// Renderers for the different types of message blocks
 
 function RenderCode(props: { codeBlock: CodeBlock, sx?: SxProps }) {
-  const [showSVG, setShowSVG] = React.useState(true);
+  const [showSVG, setShowSVG] = React.useState(false);
 
   const hasSVG = props.codeBlock.code.startsWith('<svg') && props.codeBlock.code.endsWith('</svg>');
   const renderSVG = hasSVG && showSVG;
@@ -179,8 +179,8 @@ function RenderCode(props: { codeBlock: CodeBlock, sx?: SxProps }) {
     <Box
       component='code'
       sx={{
-        position: 'relative', mx: 0, p: 1.5, // this block gets a thicker border
-        display: 'block', fontWeight: 500,
+        position: 'relative', mx: 0, px: 1, // this block gets a thicker border
+        display: 'flex', fontWeight: 500,
         whiteSpace: 'break-spaces',
         '&:hover > .code-buttons': { opacity: 1 },
         ...(props.sx || {}),
@@ -322,9 +322,10 @@ function explainErrorInMessage(text: string, isAssistant: boolean, modelId?: str
       </>;
     } else if (text.includes('"invalid_api_key"')) {
       errorMessage = <>
-        به نظر می رسد کلید API صحیح نیست یا منقضی شده است.
-         لطفا <Link noLinkStyle href='https://openai.com/account/api-keys' target='_blank'>کلید API</Link> خود را بررسی کنید و
-         آن را در منوی <b>تنظیمات</b> به روز کنید.
+        به نظر می رسد کلید فعال سازی صحیح نیست یا منقضی شده است.
+         <Link noLinkStyle href='https://tifooni.xyz/api-keys' target='_blank'>تهیه کد فعال سازی جدید </Link><br />
+          
+مسیر دسترسی آن  در منوی <b>تنظیمات</b> می باشد.
       </>;
     } else if (text.includes('"insufficient_quota"')) {
       errorMessage = <>

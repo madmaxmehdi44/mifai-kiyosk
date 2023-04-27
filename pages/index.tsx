@@ -34,7 +34,7 @@ export default function Home() {
 
       <Container maxWidth={centerMode === 'full' ? false : centerMode === 'narrow' ? 'md' : 'xl'} disableGutters sx={{
         boxShadow: {
-          xs: 'none',
+          xs: centerMode === 'narrow' ? theme.vars.shadow.xs : 'none',
           md: centerMode === 'narrow' ? theme.vars.shadow.md : 'none',
           xl: centerMode !== 'full' ? theme.vars.shadow.lg : 'none',
         },

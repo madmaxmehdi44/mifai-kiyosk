@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'zustand/shallow';
+import '@fontsource/public-sans';
 
 import { Box, useTheme } from '@mui/joy';
 import { SxProps } from '@mui/joy/styles/types';
@@ -99,7 +100,7 @@ export function Chat(props: { onShowSettings: () => void, sx?: SxProps }) {
         onShowSettings={props.onShowSettings}
         sx={{
           zIndex: 20, // position: 'sticky', top: 0,
-          // ...(process.env.NODE_ENV === 'development' ? { background: theme.vars.palette.danger.solidBg } : {}),
+           ...(process.env.NODE_ENV === 'development' ? { background: theme.vars.palette.danger.solidBg } : {}),
         }} />
 
       <ChatMessageList
@@ -107,9 +108,12 @@ export function Chat(props: { onShowSettings: () => void, sx?: SxProps }) {
         isMessageSelectionMode={isMessageSelectionMode} setIsMessageSelectionMode={setIsMessageSelectionMode}
         onRestartConversation={handleExecuteConversation}
         sx={{
-          flexGrow: 1,
-          background: theme.vars.palette.background.level2,
-          overflowY: 'auto', // overflowY: 'hidden'
+          flexGrow:1,
+          // flexFlow: 'row-reverse wrap',
+          background: theme.vars.palette.background.level1,
+          overflowY: 'auto', 
+          direction:'rtl',
+          // overflowY: 'hidden'
         }} />
 
       <Composer
@@ -117,21 +121,23 @@ export function Chat(props: { onShowSettings: () => void, sx?: SxProps }) {
         isDeveloperMode={systemPurposeId === 'Developer'}
         onSendMessage={handleSendUserMessage}
         sx={{
-          zIndex: 21, // position: 'sticky', bottom: 0,
+          zIndex: 21, 
+          //  position: 'sticky', bottom: 0,
           background: theme.vars.palette.background.surface,
           borderTop: `1px solid ${theme.vars.palette.divider}`,
           p: { xs: 1, md: 2 },
+          direction:'rtl',
         }} />
 
       {/* Confirmation for Publishing */}
-      <ConfirmationModal
+      {/* <ConfirmationModal
         open={!!publishConversationId} onClose={() => setPublishConversationId(null)} onPositive={handleConfirmedPublishConversation}
         confirmationText={<>
           گفتگوی خود را به صورت ناشناس در <Link href='https://paste.gg' target='_blank'>paste.gg</Link> به اشتراک بگذارید؟
            فهرست نشده و برای اشتراک‌گذاری و خواندن به مدت 30 روز در دسترس خواهد بود. به خاطر داشته باشید که حذف ممکن است امکان پذیر نباشد.
            آیا مطمئن هستید که می خواهید ادامه دهید؟
         </>} positiveActionText={'Understood, upload to paste.gg'}
-      />
+      /> */}
 
       {/* Show the Published details */}
       {!!publishResponse && (
