@@ -31,7 +31,7 @@ import { useSpeechRecognition } from '@/components/util/useSpeechRecognition';
 
 
 // CSS helpers
-
+//good
 const hideOnMobile = { display: { xs: 'none', md: 'flex' } };
 const hideOnDesktop = { display: { xs: 'flex', md: 'none' } };
 
